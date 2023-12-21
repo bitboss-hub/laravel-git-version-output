@@ -4,6 +4,7 @@ namespace BitbossHub\GitVersionOutput;
 
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\RuntimeException;
+use BitbossHub\GitVersionOutput\CouldNotGetVersionException;
 
 class GitVersion
 {
