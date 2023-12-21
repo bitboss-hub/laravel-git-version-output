@@ -1,0 +1,22 @@
+{
+    "name": "bitboss-hub/git-version-output",
+    "description": "Nothing for now",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "BitbossHub\\GitVersionOutput\\": "src/"
+        }
+    },
+    "suggest": {
+        "symfony/process": "Used rather than `shell_exec` if available (>=3.3)."
+    },
+    "authors": [
+        {
+            "name": "Riccardo Barbotti",
+            "email": "snake03@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
