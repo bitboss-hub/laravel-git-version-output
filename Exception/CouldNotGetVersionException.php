@@ -1,6 +1,6 @@
 <?php
 
-namespace BitbossHub\GitVersionOutput;
+namespace BitbossHub\GitVersionOutput\Exception;
 
 use RuntimeException;
 
