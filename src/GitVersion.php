@@ -8,6 +8,11 @@ use Symfony\Component\Process\Exception\RuntimeException;
 class GitVersion
 {
 
+    const APP_NAME = 'app_name';
+    const TAG = 'tag';
+    const COMMIT = 'commit';
+    const SINCE_TAG = 'since_tag';
+    const BUILD_DATE = 'build_date';
 
     /**
      * Get the app's version string

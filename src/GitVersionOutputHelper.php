@@ -8,11 +8,6 @@ use Symfony\Component\Process\Exception\RuntimeException;
 class GitVersionOutputHelper
 {
 
-    const APP_NAME = 'app_name';
-    const TAG = 'tag';
-    const COMMIT = 'commit';
-    const SINCE_TAG = 'since_tag';
-    const BUILD_DATE = 'build_date';
 
     private static function appName()
     {
@@ -52,15 +47,15 @@ class GitVersionOutputHelper
         $date = !empty($information[3]) ? $information[3] : null;
 
         return [
-            self::APP_NAME => $appName,
-            self::TAG => $tag,
-            self::COMMIT => $commit,
-            self::SINCE_TAG => $commits,
-            self::BUILD_DATE => $date,
+            GitVersion::APP_NAME => $appName,
+            GitVersion::TAG => $tag,
+            GitVersion::COMMIT => $commit,
+            GitVersion::SINCE_TAG => $commits,
+            GitVersion::BUILD_DATE => $date,
         ];
     }
 
-    public function getOnly($const)
+    public static function getOnly($const)
     {
         return self::getInformations()[$const];
     }
