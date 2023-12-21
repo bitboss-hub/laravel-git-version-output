@@ -2,6 +2,7 @@
 
 namespace BitbossHub\GitVersionOutput;
 
+use BitbossHub\GitVersionOutput\Exception\CouldNotGetVersionException;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\RuntimeException;
 
@@ -16,7 +17,11 @@ class GitVersionOutputHelper
 
     private static function createVersionFile()
     {
-        $version = explode("-", GitVersion::getCurrentVersion());
+        try {
+            $version = explode("-", GitVersion::getCurrentVersion());
+        } catch (CouldNotGetVersionException $e) {
+            return [];
+        }
         $tag = !empty($version[0]) ? $version[0] : null;
         $commits = !empty($version[1]) ? $version[1] : null;
         $commit = !empty($version[2]) ? $version[2] : null;
